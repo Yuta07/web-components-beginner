@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>list-template</title>
+    <script src="./main.ts" defer></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .template-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .template-name {
+      font-size: 1.5rem;
+    }
+
+    .template-description {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+  </style>
+  <body>
+    <section class="container">
+      <template id="list-template">
+        <style>
+          .template-card {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            gap: 8px;
+            border-radius: 4px;
+          }
+
+          .template-img-flame {
+            margin: 0;
+          }
+        </style>
+        <div class="template-card">
+          <p class="template-img-flame">
+            <slot name="element-img"></slot>
+          </p>
+          <div>
+            <slot name="element-name">animal name</slot>
+            <slot name="element-description">animal description</slot>
+          </div>
+        </div>
+      </template>
+
+      <list-template-card>
+        <img
+          slot="element-img"
+          src="./hans-jurgen-mager-qQWV91TTBrE-unsplash.jpg"
+          alt="white-bear"
+          class="template-img"
+        />
+        <h2 slot="element-name" class="template-name">White Bear</h2>
+        <p slot="element-description" class="template-description">しろくま</p>
+      </list-template-card>
+      <list-template-card>
+        <img
+          slot="element-img"
+          src="./manja-vitolic-gKXKBY-C-Dk-unsplash.jpg"
+          alt="dog"
+          class="template-img"
+        />
+        <h2 slot="element-name" class="template-name">Cat</h2>
+        <p slot="element-description" class="template-description">ねこ</p>
+      </list-template-card>
+      <list-template-card>
+        <img
+          slot="element-img"
+          src="./pauline-loroy-U3aF7hgUSrk-unsplash.jpg"
+          alt="dog"
+          class="template-img"
+        />
+        <h2 slot="element-name" class="template-name">Dog</h2>
+        <p slot="element-description" class="template-description">いぬ</p>
+      </list-template-card>
+    </section>
+  </body>
+</html>
