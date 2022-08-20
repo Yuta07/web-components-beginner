@@ -41,10 +41,6 @@ class LinkTextStandard extends HTMLElement {
     shadow.append(wrapper);
   }
 
-  static get observedAttributes() {
-    return ["c", "l"];
-  }
-
   connectedCallback() {
     console.log("Custom element added to page.");
   }
